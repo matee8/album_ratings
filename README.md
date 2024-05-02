@@ -12,3 +12,8 @@ azokat.
 - CSS 3
 - Bootstrap
 - PHP
+## Dokumentáció
+A szerver mindent a `/public/index.php` fájlban kezel, logikáját pedig az ebbe
+behívott forrásfájlok adják meg. A sablon fájlok a `/resources/views/` 
+könyvtárban helyezkednek el, ezekhez tartozó szerveroldali forráskódok pedig a 
+`/src/` könyvtárban.
