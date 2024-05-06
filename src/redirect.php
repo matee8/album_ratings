@@ -6,5 +6,6 @@ if (isset($_GET["page"])) {
         $filename = $templates[$_GET["page"]] . "/" . $_GET["page"];
     }
 } 
-include_once("../resources/views/" . $filename . ".php");
+include_once('../src/' . $filename . ".php");
+include_once("../resources/views/" . $filename . ".html");
 ?>

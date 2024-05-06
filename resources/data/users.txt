@@ -1,1 +1,5 @@
-admin;admin
+root;root@root.hu;root
+admin;admin@admin.hu;admin
+mate;mate@mate.hu;admin
+
+doman;doman@domna.doman;doman
