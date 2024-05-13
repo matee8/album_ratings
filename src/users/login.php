@@ -1,14 +1,22 @@
 <?php
+if (isset($_SESSION["failed_login"]) && $_SESSION["failed_login"]) {
+    echo("
+        <script>
+            alert(\"Először jelentkezzen be!\");
+        </script>
+    ");
+    unset($_SESSION["failed_login"]);
+}
 if (isset($_POST['login'])) {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
     $valid_user = false;
-    $file = fopen("../resources/data/users.txt", "r");
+    $file = file_get_contents("../resources/data/users.txt", "r");
 
-    while (!feof($file)) {
-        $line = explode(";", fgets($file));
-        if (count($line) > 1) {
-            if ($line[0] == $username && trim($line[2]) == $password) {
+    foreach (explode("\n", $file) as $line) {
+        $data = explode(";", $line);
+        if (count($data) > 1) {
+            if ($data[0] == $username && trim($data[2]) == $password) {
                 $_SESSION["logged_in"] = true;
                 $valid_user = true;
                 header("location: index.php?page=view");

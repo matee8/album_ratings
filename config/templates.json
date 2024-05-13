@@ -2,6 +2,8 @@
     "login": "users",
     "logout": "users",
     "registration": "users",
-    "upload": "albums",
-    "view": "albums"
+    "view": "albums",
+    "insert": "albums",
+    "delete": "albums",
+    "update": "albums"
 }
