@@ -1,5 +1,7 @@
 {
     "login": "users",
+    "logout": "users",
     "registration": "users",
-    "upload": "albums"
+    "upload": "albums",
+    "view": "albums"
 }

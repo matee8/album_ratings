@@ -11,9 +11,9 @@ session_start();
 </head>
 <body>
     <?php
-    include_once("../resources/inc/navbar.html");
+    include_once("../resources/inc/navbar.php");
     include_once("../src/redirect.php");
-    include_once("../resources/inc/footer.html");
+    include_once("../resources/inc/footer.php");
     ?>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
