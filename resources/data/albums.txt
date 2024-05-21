@@ -1,4 +1,5 @@
+0;Radiohead2;OK Computer;
+1;Radiohead;In Rainbows;
+2;Gunics Roland;Gyógytestnevelés;
 
-Radiohead;OK Computer;
-Radiohead;OK Computer;
-Zana Domán;Gyógytestnevelés;
+3;Kendrick Lamar;To Pimp A Butterfly;

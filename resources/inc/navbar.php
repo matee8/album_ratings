@@ -13,7 +13,7 @@
                     <a class="nav-link<?= isset($_GET["page"]) && $_GET["page"] == "view" ? " active\" aria-current=\"page\"" : "\"" ?> href="./index.php?page=view">Albumok</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link<?= isset($_GET["page"]) && $_GET["page"] == "upload" ? " active\" aria-current=\"page\"" : "\"" ?> href="./index.php?page=insert">Feltöltés</a>
+                    <a class="nav-link<?= isset($_GET["page"]) && $_GET["page"] == "insert" ? " active\" aria-current=\"page\"" : "\"" ?> href="./index.php?page=insert">Feltöltés</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link<?= isset($_GET["page"]) && $_GET["page"] == "update" ? " active\" aria-current=\"page\"" : "\"" ?> href="./index.php?page=update">Módosítás</a>
