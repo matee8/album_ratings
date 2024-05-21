@@ -36,6 +36,7 @@
     </form>
     <?php
     elseif ($_SESSION["album"] == "updated"):
+    unset($_SESSION["album"]);
     ?>
     <h1 class="text-center">Sikeres módostás!</h1>
     <?php

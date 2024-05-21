@@ -33,14 +33,17 @@ if (isset($_POST["update"])) {
     file_put_contents("../resources/data/albums.txt", 
         implode("\n", $file_data));
     $_SESSION["album"] = "updated";
+    unset($_SESSION["albums"]);
 }
-$file = file_get_contents("../resources/data/albums.txt");
-$albums = [];
-foreach (explode("\n", $file) as $line) {
-    $data = explode(";", $line);
-    if (count($data) > 1) {
-        array_push($albums, $data);
+if (!isset($_SESSION["albums"])) {
+    $file = file_get_contents("../resources/data/albums.txt");
+    $albums = [];
+    foreach (explode("\n", $file) as $line) {
+        $data = explode(";", $line);
+        if (count($data) > 1) {
+            array_push($albums, $data);
+        }
     }
+    $_SESSION["albums"] = $albums;
 }
-$_SESSION["albums"] = $albums;
 ?>
