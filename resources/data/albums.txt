@@ -1,5 +1,8 @@
-0;Radiohead3;OK Computer;
-1;Radiohead;In Rainbows;
-
-3;Kendrick Lamar;To Pimp A Butterfly;
-6;Zana Domán;asdasd;
+0;Radiohead;OK Computer;../resources/data/img/radiohead-ok-computer-Cover-Art.webp
+1;Radiohead;In Rainbows;../resources/data/img/radiohead-in-rainbows-Cover-Art.webp
+2;Kendrick Lamar;To Pimp A Butterfly;../resources/data/img/kendrick-lamar-to-pimp-a-butterfly-Cover-Art.webp
+3;Pink Floyd;Wish You Were Here;../resources/data/img/pink-floyd-wish-you-were-here-Cover-Art.webp
+4;King Crimson;In the Court of the Crimson King;../resources/data/img/king-crimson-in-the-court-of-the-crimson-king-Cover-Art.webp
+5;The Beatles;Abbey Road;../resources/data/img/the-beatles-abbey-road-Cover-Art.webp
+6;Talking Heads;Remain In Light;../resources/data/img/talking-heads-remain-in-light-Cover-Art.webp
+7;David Bowie;The Rise and Fall of Ziggy Stardust and the Spiders From Mars;../resources/data/img/david-bowie-the-rise-and-fall-of-ziggy-stardust-and-the-spiders-from-mars-Cover-Art.webp

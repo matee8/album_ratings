@@ -9,6 +9,9 @@
                 <li class="nav-item">
                     <a class="nav-link<?= !isset($_GET["page"]) ? " active\" aria-current=\"page\"" : "\"" ?> href="./index.php">Főoldal</a>
                 </li>
+                <?php
+                if (isset($_SESSION["logged_in"])):
+                ?>
                 <li class="nav-item">
                     <a class="nav-link<?= isset($_GET["page"]) && $_GET["page"] == "view" ? " active\" aria-current=\"page\"" : "\"" ?> href="./index.php?page=view">Albumok</a>
                 </li>
@@ -21,6 +24,9 @@
                 <li class="nav-item">
                     <a class="nav-link<?= isset($_GET["page"]) && $_GET["page"] == "delete" ? " active\" aria-current=\"page\"" : "\"" ?> href="./index.php?page=delete">Törlés</a>
                 </li>
+                <?php
+                endif;
+                ?>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <?php 

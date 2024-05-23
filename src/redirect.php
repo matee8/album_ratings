@@ -8,8 +8,8 @@ if (isset($_GET["page"])) {
         if ($templates[$_GET["page"]] == "albums") {
             include_once("../src/albums/login_check.php");
         }
-        include_once("../src/" . $filename . ".php");
     }
 } 
+include_once("../src/" . $filename . ".php");
 include_once("../resources/views/" . $filename . ".php");
 ?>

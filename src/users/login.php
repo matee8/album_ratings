@@ -16,8 +16,8 @@ if (isset($_POST['login'])) {
     foreach (explode("\n", $file) as $line) {
         $data = explode(";", $line);
         if (count($data) > 1) {
-            if ($data[0] == $username && trim($data[2]) == $password) {
-                $_SESSION["logged_in"] = true;
+            if ($data[1] == $username && trim($data[3]) == $password) {
+                $_SESSION["logged_in"] = $data[0];
                 $valid_user = true;
                 header("location: index.php?page=view");
             }

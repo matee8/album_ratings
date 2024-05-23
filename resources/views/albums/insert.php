@@ -1,34 +1,12 @@
-<?php
-if (isset($_POST["insert"])) {
-    $artist = trim($_POST["artist"]);
-    $title = trim($_POST["title"]);
-    $cover = trim($_POST["cover"]);
-    $valid_album = true;
-    $id = 0;
-    $file = file_get_contents("../resources/data/albums.txt");
-
-    foreach (explode("\n", $file) as $line) {
-        $data = explode(";", $line);
-        if (count($data) > 1) {
-            $id += $data[0];
-            if ($data[1] == $artist && trim($data[2]) == $title 
-                && trim($data[3]) == $cover) {
-                $valid_album = false;
-            }
-        }
-    }
-
-    if (!$valid_album) {
-        echo("
-            <script>
-                alert(\"Ilyen album már van az adatbázisunkban!\");
-            </script>
-        ");
-    }
-
-    if ($valid_album) {
-        file_put_contents("../resources/data/albums.txt", 
-            $file . "\n" . $id . ";" .  $artist . ";" . $title . ";" . $cover);
-    }
-}
-?>
+<div class="container row text-center mx-auto my-5">
+    <form method="post" class="mx-auto bg-light border border-2 rounded col-6 px-3 pt-3" enctype="multipart/form-data">
+        <h1>Album feltöltése</h1>
+        <label for="artist" class="form-label">Előadó</label><br>
+        <input type="text" name="artist" class="form-control"><br>
+        <label for="title" class="form-label">Cím</label>
+        <input type="text" name="title" class="form-control"><br>
+        <label for="cover" class="form-label">Borító</label>
+        <input type="file" accept=".png,.jpg,.jpeg,.webp" name="cover" class="form-control"><br>
+        <input type="submit" name="insert" value="Feltöltés" class="btn btn-primary mb-3">
+    </form>
+</div>

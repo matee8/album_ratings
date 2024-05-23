@@ -6,8 +6,8 @@ if (isset($_POST["register"])) {
     $password_again = trim($_POST["password_again"]);
     $file = file_get_contents("../resources/data/users.txt");
     $lines = explode("\n", $file);
+    $id = 0;
     $valid_registration = true;
-    $i = 0;
 
     if ($password !== $password_again) {
         $valid_registration = false;
@@ -17,7 +17,8 @@ if (isset($_POST["register"])) {
         for ($i = 0; $i < count($lines); $i++) {
             $line = explode(";", $lines[$i]);
             if (count($line) > 1) {
-                if ($line[0] == $username || $line[1] == $email) {
+                $id++;
+                if ($line[1] == $username || $line[2] == $email) {
                     $valid_registration = false;
                     break;
                 }
@@ -27,7 +28,8 @@ if (isset($_POST["register"])) {
     
     if ($valid_registration) {
         file_put_contents("../resources/data/users.txt", 
-            $file . "\n" . $username . ";" . $email . ";" . $password);
+            $file . $id . ";" .  $username . ";" . $email . 
+                ";" . $password);
         header("refresh: 3; url=index.php?page=login");
         echo("
             <script>

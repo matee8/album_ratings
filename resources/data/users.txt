@@ -1,1 +1,3 @@
-admin;admin@admin.hu;admin
+0;admin;admin@admin.hu;admin
+1;mate;molnarmatenorbert@gmail.com;jelszo
+2;user;user@user.hu;password

@@ -18,7 +18,7 @@
     if (isset($_SESSION["album"]) && $_SESSION["album"] != "invalid" 
         && $_SESSION["album"] != "updated"):
     ?>
-    <form method="post" class="mx-auto">
+    <form method="post" class="mx-auto" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="artist" class="form-label">Előadó</label>
             <input type="text" class="form-control" name="artist" value="<?= $_SESSION["album"][1] ?>">
@@ -29,20 +29,20 @@
         </div>
         <div class="mb-3">
             <label for="cover" class="form-label">Borító</label>
-            <input type="text" class="form-control" name="cover" value="<?= $_SESSION["album"][3] ?>">
+            <input type="file" class="form-control" accept=".png,.jpg,.jpeg,.webp" name="cover" value="<?= $_SESSION["album"][3] ?>">
         </div>
         <input type="hidden" name="id" value="<?= $_SESSION["album"][0] ?>">
         <button type="submit" class="btn btn-primary" name="update">Módosítás</button>
     </form>
     <?php
-    elseif ($_SESSION["album"] == "updated"):
+    elseif (isset($_SESSION["album"]) && $_SESSION["album"] == "updated"):
     unset($_SESSION["album"]);
     ?>
     <h1 class="text-center">Sikeres módostás!</h1>
     <?php
     else:
     ?>
-    <h1 class="text-center">Kérjük, próbálja újra!</h1>
+    <h1 class="text-center">Kérjük, válasszon albumot!</h1>
     <?php
     endif;
     ?>

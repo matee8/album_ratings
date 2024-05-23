@@ -10,13 +10,16 @@ if (isset($_POST["delete"])) {
         }
     }
     for ($i = 0; $i < count($file_data); $i++) {
-        if (explode(";", $file_data[$i])[0] == $album_id) {
+        $data = explode(";", $file_data[$i]);
+        if ($data[0] == $album_id) {
+            unlink($data[3]);
             unset($file_data[$i]);
             break;
         }
     }
     file_put_contents("../resources/data/albums.txt", 
         implode("\n", $file_data));
+
     unset($_SESSION["albums"]);
 }
 if (!isset($_SESSION["albums"])) {

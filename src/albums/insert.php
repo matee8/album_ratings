@@ -1,12 +1,37 @@
-<div class="container row text-center mx-auto my-5">
-    <form method="post" class="mx-auto bg-light border border-2 rounded col-6 px-3 pt-3">
-        <h1>Album feltöltése</h1>
-        <label for="artist" class="form-label">Előadó</label><br>
-        <input type="text" name="artist" class="form-control"><br>
-        <label for="title" class="form-label">Cím</label>
-        <input type="text" name="title" class="form-control"><br>
-        <label for="cover" class="form-label">Borító</label>
-        <input type="file" name="cover" class="form-control"><br>
-        <input type="submit" name="insert" value="Feltöltés" class="btn btn-primary">
-    </form>
-</div>
+<?php
+if (isset($_POST["insert"])) {
+    $artist = trim($_POST["artist"]);
+    $title = trim($_POST["title"]);
+    $valid_album = true;
+    $id = 0;
+    $file = file_get_contents("../resources/data/albums.txt");
+    $target_dir = "../resources/data/img/";
+    $target_file = $target_dir . basename($_FILES["cover"]["name"]);
+
+    foreach (explode("\n", $file) as $line) {
+        $data = explode(";", $line);
+        if (count($data) > 1) {
+            $id++;
+            if (($data[1] == $artist && $data[2] == $title
+                && $data[3] == $target_file)
+                || !file_exists($_FILES["cover"]["tmp_name"])) {
+                $valid_album = false;
+            }
+        }
+    }
+
+    if (!$valid_album) {
+        echo("
+            <script>
+                alert(\"Nem megfelelő adatokat adott meg!\");
+            </script>
+        ");
+    } else {
+        file_put_contents("../resources/data/albums.txt", 
+            $file . $id . ";" .  $artist . ";" . $title . ";" 
+                . $target_file);
+        move_uploaded_file($_FILES["cover"]["tmp_name"], $target_file);
+        unset($_SESSION["albums"]);
+    }
+}
+?>
